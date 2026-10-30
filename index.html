@@ -221,7 +221,8 @@ p { margin: 0; }
 /* Serviço que gera dúvida (pós-parto, pós-operatório) ganha foto: a imagem sangra
    até a borda usando margem negativa, sem reestruturar o flex do card. */
 .card .card-foto {
-  width: calc(100% + 64px); margin: -34px -32px 6px; display: block;
+  /* max-width:100% global travava a sangria e a foto nao chegava na borda */
+  width: calc(100% + 64px); max-width: none; margin: -34px -32px 6px; display: block;
   aspect-ratio: 16/9; object-fit: cover;
   border-radius: var(--r-card) var(--r-card) 0 0;
 }
@@ -606,6 +607,7 @@ p { margin: 0; }
         </article>
         <div class="grupo-head reveal"><h3>Cuidado em fases específicas</h3><span class="fio"></span></div>
         <article class="card reveal" style="--i:1">
+          <img class="card-foto" src="img/gestante.jpg" alt="Tape aplicado na barriga durante a gestação" loading="lazy">
           <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.3S3.8 15.4 3.8 9.7A4.2 4.2 0 0 1 12 7.6a4.2 4.2 0 0 1 8.2 2.1c0 5.7-8.2 10.6-8.2 10.6Z"/></svg></span>
           <h3>Gestante — cuidado completo</h3>
           <p class="meta"><span class="preco">R$ 230</span><span class="dur">1h40</span></p>
@@ -613,20 +615,18 @@ p { margin: 0; }
           <p class="para">Para gestantes com inchaço, peso nas pernas ou dor lombar.</p>
           <a class="saiba" href="https://wa.me/5567992042167?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20Gestante%20%E2%80%94%20cuidado%20completo." target="_blank" rel="noopener">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
         </article>
-        <article class="card reveal destaque" style="--i:2">
+        <article class="card reveal" style="--i:2">
           <img class="card-foto" src="img/posparto.jpg" alt="Tape abdominal aplicado no pós-parto" loading="lazy">
           <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9.5" r="2.4"/><path d="M2.5 20a5.5 5.5 0 0 1 11 0"/><path d="M15 20a4 4 0 0 1 6.5-3.1"/></svg></span>
-          <span class="selo-top">Atendimento na sua casa</span>
           <h3>Pós-parto — atendimento em casa</h3>
           <p class="meta"><span class="preco">R$ 190</span><span class="dur">cerca de 45 min</span></p>
           <p>O tape abdominal dá sustentação e tira aquela sensação de &quot;tudo solto&quot; que fica depois do parto. Junto com isso, ajuda na diminuição do edema, na redução da dor e no processo de cicatrização. Quando há indicação, entra também a fotobiomodulação com ILIB. Tudo feito na sua casa — a locomoção já está inclusa em toda Aquidauana e também em Anastácio.</p>
           <p class="para">Para o puerpério, sem precisar sair com o bebê. O momento de começar depende da liberação médica e do tipo de parto — me mande mensagem que eu te oriento.</p>
           <a class="saiba" href="https://wa.me/5567992042167?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20P%C3%B3s-parto%20%E2%80%94%20atendimento%20em%20casa." target="_blank" rel="noopener">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
         </article>
-        <article class="card reveal destaque" style="--i:0">
+        <article class="card reveal" style="--i:0">
           <img class="card-foto" src="img/poscirurgico.jpg" alt="Tape aplicado no pós-operatório de cirurgia plástica" loading="lazy">
           <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.2c0 4.6-3.2 8.6-7.5 10-4.3-1.4-7.5-5.4-7.5-10V6L12 3Z"/><path d="M9.2 12l2 2 3.6-3.7"/></svg></span>
-          <span class="selo-top">Atendimento na sua casa</span>
           <h3>Pós-operatório de plástica — em casa</h3>
           <p class="meta"><span class="preco">Sob consulta</span><span class="dur">conforme a cirurgia</span></p>
           <p>Recuperação assistida depois de cirurgia plástica, feita no conforto da sua casa. Conforme a avaliação, a sessão combina drenagem linfática, aplicação de tape e fotobiomodulação com laser infravermelho. Cada atendimento acompanha os sinais que o seu corpo apresenta naquele momento e segue as orientações do seu cirurgião — por isso duração e valor dependem do procedimento que você fez.</p>
