@@ -523,6 +523,9 @@ p { margin: 0; }
   .mosaico { grid-template-columns: repeat(6, 1fr); gap: 10px; }
   .mosaico button { grid-column: span 3 !important; aspect-ratio: 1/1 !important; }
   .mosaico button:first-child { grid-column: span 6 !important; aspect-ratio: 16/10 !important; }
+  /* A foto do hero e um retrato (3x4). Forcar 4/3 deitado no celular jogava fora
+     60% dela e deixava o enquadramento espremido. 4/5 respeita o retrato. */
+  .hero-media > img { aspect-ratio: 4/5; object-position: 50% 15%; }
   .aval-topo { align-items: flex-start; }
 }
 @media (max-width: 520px) {
@@ -607,7 +610,6 @@ p { margin: 0; }
         </article>
         <div class="grupo-head reveal"><h3>Cuidado em fases específicas</h3><span class="fio"></span></div>
         <article class="card reveal" style="--i:1">
-          <img class="card-foto" src="img/gestante.jpg" alt="Tape aplicado na barriga durante a gestação" loading="lazy">
           <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.3S3.8 15.4 3.8 9.7A4.2 4.2 0 0 1 12 7.6a4.2 4.2 0 0 1 8.2 2.1c0 5.7-8.2 10.6-8.2 10.6Z"/></svg></span>
           <h3>Gestante — cuidado completo</h3>
           <p class="meta"><span class="preco">R$ 230</span><span class="dur">1h40</span></p>
@@ -616,7 +618,6 @@ p { margin: 0; }
           <a class="saiba" href="https://wa.me/5567992042167?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20Gestante%20%E2%80%94%20cuidado%20completo." target="_blank" rel="noopener">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
         </article>
         <article class="card reveal" style="--i:2">
-          <img class="card-foto" src="img/posparto.jpg" alt="Tape abdominal aplicado no pós-parto" loading="lazy">
           <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9.5" r="2.4"/><path d="M2.5 20a5.5 5.5 0 0 1 11 0"/><path d="M15 20a4 4 0 0 1 6.5-3.1"/></svg></span>
           <h3>Pós-parto — atendimento em casa</h3>
           <p class="meta"><span class="preco">R$ 190</span><span class="dur">cerca de 45 min</span></p>
