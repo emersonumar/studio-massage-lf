@@ -231,7 +231,10 @@ p { margin: 0; }
 .card .meta .dur { font-size: .7rem; text-transform: uppercase; letter-spacing: .13em; color: var(--ink-55); }
 .card .para { font-size: .85rem; color: var(--ink-55); border-left: 2px solid color-mix(in srgb, var(--brand) 26%, transparent); padding-left: 11px; }
 /* O carro-chefe nao pode ter o mesmo peso de um combo de presente. */
-.card.destaque { background: var(--tint-forte); box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--brand) 38%, transparent); grid-column: span 2; }
+/* Realcar e alargar sao coisas separadas: dois cards realcados lado a lado
+   e normal, dois cards alargados numa grade de 3 deixa buraco. */
+.card.destaque { background: var(--tint-forte); box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--brand) 38%, transparent); }
+.card.largo { grid-column: span 2; }
 .card.destaque .selo-top { font-size: .64rem; text-transform: uppercase; letter-spacing: .16em; color: var(--brand); font-weight: 600; margin-bottom: -4px; }
 
 /* Cabecalho de grupo: quebra a grade por intencao (tratar / cuidar / relaxar / presentear) */
@@ -501,7 +504,7 @@ p { margin: 0; }
      encolhe e ele, com tamanho fixo, ocupava 84% da largura da foto — virava uma
      faixa atravessada no meio do retrato. Aqui ele vira selo de canto. */
   /* Numa coluna so, span 2 criaria coluna fantasma. */
-  .card.destaque { grid-column: auto; }
+  .card.largo { grid-column: auto; }
   .card-nota { right: 12px; bottom: 12px; padding: 9px 13px; gap: 10px; border-radius: 13px; }
   .card-nota .g { font-size: 1.1rem; }
   .card-nota .n { font-size: 1.2rem; }
@@ -599,7 +602,7 @@ p { margin: 0; }
       </div>
       <div class="grid-3">
         <div class="grupo-head reveal"><h3>Tratamento para dor</h3><span class="fio"></span></div>
-        <article class="card reveal destaque" style="--i:0">
+        <article class="card reveal destaque largo" style="--i:0">
           <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 13.5V7.2a1.4 1.4 0 0 1 2.8 0v4.3"/><path d="M9.3 11V5.9a1.4 1.4 0 0 1 2.8 0V11"/><path d="M12.1 11.2V6.8a1.4 1.4 0 0 1 2.8 0v5"/><path d="M14.9 11.8V9.3a1.4 1.4 0 0 1 2.8 0v4.9c0 3.4-2.2 6.3-5.6 6.3s-5.6-2.3-5.6-5.6"/></svg></span>
           <span class="selo-top">O mais procurado</span>
           <h3>Protocolo personalizado para dor</h3>
@@ -617,7 +620,8 @@ p { margin: 0; }
           <p class="para">Para gestantes com inchaço, peso nas pernas ou dor lombar.</p>
           <a class="saiba" href="https://wa.me/5567992042167?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20Gestante%20%E2%80%94%20cuidado%20completo." target="_blank" rel="noopener">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
         </article>
-        <article class="card reveal" style="--i:2">
+        <article class="card reveal destaque" style="--i:2">
+          <img class="card-foto" src="img/maos.jpg" alt="Drenagem linfática durante o atendimento" loading="lazy">
           <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9.5" r="2.4"/><path d="M2.5 20a5.5 5.5 0 0 1 11 0"/><path d="M15 20a4 4 0 0 1 6.5-3.1"/></svg></span>
           <h3>Pós-parto — atendimento em casa</h3>
           <p class="meta"><span class="preco">R$ 190</span><span class="dur">cerca de 45 min</span></p>
@@ -625,7 +629,7 @@ p { margin: 0; }
           <p class="para">Para o puerpério, sem precisar sair com o bebê. O momento de começar depende da liberação médica e do tipo de parto — me mande mensagem que eu te oriento.</p>
           <a class="saiba" href="https://wa.me/5567992042167?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20P%C3%B3s-parto%20%E2%80%94%20atendimento%20em%20casa." target="_blank" rel="noopener">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
         </article>
-        <article class="card reveal" style="--i:0">
+        <article class="card reveal destaque" style="--i:0">
           <img class="card-foto" src="img/poscirurgico.jpg" alt="Tape aplicado no pós-operatório de cirurgia plástica" loading="lazy">
           <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.2c0 4.6-3.2 8.6-7.5 10-4.3-1.4-7.5-5.4-7.5-10V6L12 3Z"/><path d="M9.2 12l2 2 3.6-3.7"/></svg></span>
           <h3>Pós-operatório de plástica — em casa</h3>
@@ -784,7 +788,7 @@ p { margin: 0; }
     <div class="container sobre-grid">
       <div class="sobre-fotos reveal">
         <img src="img/gmb1.jpg" alt="Studio Letícia Fonseca">
-        <img src="img/maos.jpg" alt="Studio Letícia Fonseca" loading="lazy">
+        <img src="img/tape.jpg" alt="Studio Letícia Fonseca" loading="lazy">
         <div class="selo"><b>5,0</b><span>no Google</span></div>
       </div>
       <div class="sobre-txt reveal">
