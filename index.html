@@ -202,6 +202,10 @@ p { margin: 0; }
    lado. Em 2 colunas vira 2x2, sem buraco - e o card fica mais largo, o que ajuda
    quem tem foto. O minmax em auto-fit ja colapsa pra 1 coluna no celular. */
 .grid-3.cols-2 { grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); }
+/* Card com foto em pe fica mais alto que o vizinho. Esticar o menor enfia um vazio
+   no meio dele; aqui cada um para na propria altura. So vale pra grade que tem
+   foto - e nela o card sem foto ja ocupa a linha inteira, entao nao sobra buraco. */
+.grid-3:has(.card-foto) { align-items: start; }
 .card {
   background: var(--tint); border-radius: var(--r-card); padding: 34px 32px 30px;
   box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--brand) 16%, transparent);
@@ -629,7 +633,7 @@ p { margin: 0; }
           <a class="saiba" href="https://wa.me/5567992042167?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20P%C3%B3s-parto%20%E2%80%94%20atendimento%20em%20casa." target="_blank" rel="noopener">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
         </article>
         <article class="card reveal destaque" style="--i:1">
-          <img class="card-foto" src="img/poscirurgico.jpg" style="aspect-ratio:4/5" alt="Tape aplicado no pós-operatório de cirurgia plástica" loading="lazy">
+          <img class="card-foto" src="img/poscirurgico.jpg" style="aspect-ratio:3/2" alt="Tape aplicado no pós-operatório de cirurgia plástica" loading="lazy">
           <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.2c0 4.6-3.2 8.6-7.5 10-4.3-1.4-7.5-5.4-7.5-10V6L12 3Z"/><path d="M9.2 12l2 2 3.6-3.7"/></svg></span>
           <h3>Pós-operatório de plástica — em casa</h3>
           <p class="meta"><span class="preco">Sob consulta</span><span class="dur">conforme a cirurgia</span></p>
